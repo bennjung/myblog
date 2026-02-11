@@ -1,0 +1,14 @@
+title: "ggulgem city"
+description: "A personal blog about mixed topics — tech, life, and everything in between."
+url: ""
+baseurl: ""
+permalink: /:year/:month/:day/:title/
+
+future: true
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

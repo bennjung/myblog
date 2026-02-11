@@ -1,0 +1,31 @@
+<footer class="site-footer">
+  <div class="footer-rule">* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</div>
+  <div class="footer-inner">
+    <p class="visitor-counter">
+      You are visitor #<span class="counter-num" id="visitorCount">000847</span> since Feb 2026
+    </p>
+    <p class="footer-meta">
+      &copy; {{ site.time | date: '%Y' }} ggulgem city | Made with Jekyll
+    </p>
+    <p class="best-viewed">
+      Best viewed in 800x600 | Netscape Navigator 4.0+
+    </p>
+    <p class="footer-ascii">[ EOF ]</p>
+  </div>
+</footer>
+
+<script>
+  // Fake visitor counter that increments on each visit
+  (function() {
+    var count = localStorage.getItem('visitorCount');
+    if (!count) {
+      count = 847;
+    }
+    count = parseInt(count) + 1;
+    localStorage.setItem('visitorCount', count);
+    var el = document.getElementById('visitorCount');
+    if (el) {
+      el.textContent = String(count).padStart(6, '0');
+    }
+  })();
+</script>
