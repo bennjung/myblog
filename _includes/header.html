@@ -1,21 +1,26 @@
-<header class="site-header">
-  <div class="header-inner">
-    <pre class="ascii-title">
-                   _                            _ _
-  __ _  __ _ _   _| | __ _  ___ _ __ ___    ___(_) |_ _   _
- / _` |/ _` | | | | |/ _` |/ _ \ '_ ` _ \  / __| | __| | | |
-| (_| | (_| | |_| | | (_| |  __/ | | | | || (__| | |_| |_| |
- \__, |\__, |\__,_|_|\__, |\___|_| |_| |_| \___|_|\__|\__, |
- |___/ |___/         |___/                             |___/
-    </pre>
-    <p class="tagline">[ {{ site.description }} ]</p>
-    <nav class="main-nav">
-      <span class="nav-decoration">&gt;&gt;</span>
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <span class="nav-separator">|</span>
-      <a href="{{ '/' | relative_url }}#posts">Posts</a>
-      <span class="nav-decoration">&lt;&lt;</span>
-    </nav>
-  </div>
-  <div class="header-rule">* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</div>
-</header>
+<aside class="sidebar" id="sidebar">
+  <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+
+  <nav>
+    <ul class="sidebar-nav">
+      <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+    </ul>
+
+    <p class="nav-section-label">Writing</p>
+    <ul class="sidebar-nav">
+      <li><a href="{{ '/' | relative_url }}#posts" {% if page.url == '/' %}class="active"{% endif %}>Blog</a></li>
+      {% assign categories = site.posts | map: "categories" | flatten | uniq | sort %}
+      {% for category in categories %}
+      <li><a href="{{ '/' | relative_url }}#posts">{{ category }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>
+
+<script>
+  document.getElementById('menuToggle').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.toggle('open');
+  });
+</script>
