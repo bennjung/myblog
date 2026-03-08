@@ -14,7 +14,7 @@ title: Home
   <ul class="post-list">
     {% for post in site.posts %}
     <li class="post-list-item">
-      <span class="post-list-date">{{ post.date | date: "%B %Y" }}</span>
+      <span class="post-list-date">{{ post.date | date: "%Y.%m.%d" }}</span>
       <a class="post-list-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
       {% if post.excerpt %}
       <p class="post-list-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
