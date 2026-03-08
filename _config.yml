@@ -8,6 +8,14 @@ future: true
 markdown: kramdown
 highlighter: rouge
 
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Benny"
+
 exclude:
   - Gemfile
   - Gemfile.lock
