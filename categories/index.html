@@ -8,8 +8,15 @@ title: Categories
 
   {% assign categories = site.posts | map: "category" | compact | uniq | sort %}
 
+  <div class="category-filter">
+    <a class="category-filter-btn active" href="#" data-category="all">All</a>
+    {% for category in categories %}
+    <a class="category-filter-btn" href="#{{ category }}" data-category="{{ category }}">{{ category }}</a>
+    {% endfor %}
+  </div>
+
   {% for category in categories %}
-  <div class="category-group" id="{{ category }}">
+  <div class="category-group" data-group="{{ category }}">
     <h3 class="category-name">{{ category }}</h3>
     <ul class="post-list">
       {% for post in site.posts %}
@@ -24,3 +31,39 @@ title: Categories
   </div>
   {% endfor %}
 </section>
+
+<script>
+  function filterCategory() {
+    var hash = decodeURIComponent(window.location.hash.replace('#', ''));
+    var groups = document.querySelectorAll('.category-group');
+    var buttons = document.querySelectorAll('.category-filter-btn');
+
+    buttons.forEach(function(btn) {
+      btn.classList.remove('active');
+      if ((!hash && btn.dataset.category === 'all') || btn.dataset.category === hash) {
+        btn.classList.add('active');
+      }
+    });
+
+    groups.forEach(function(group) {
+      if (!hash || hash === 'all' || group.dataset.group === hash) {
+        group.style.display = '';
+      } else {
+        group.style.display = 'none';
+      }
+    });
+  }
+
+  window.addEventListener('hashchange', filterCategory);
+  filterCategory();
+
+  document.querySelectorAll('.category-filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      if (this.dataset.category === 'all') {
+        e.preventDefault();
+        history.pushState(null, '', window.location.pathname);
+        filterCategory();
+      }
+    });
+  });
+</script>
