@@ -283,34 +283,6 @@ img {
 }
 
 /* --- Categories Page --- */
-.category-filter {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 32px;
-  flex-wrap: wrap;
-}
-
-.category-filter-btn {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #555;
-  background-color: #f0f0f0;
-  padding: 6px 16px;
-  border-radius: 16px;
-  text-decoration: none;
-  transition: background-color 0.15s, color 0.15s;
-}
-
-.category-filter-btn:hover {
-  background-color: #e0e0e0;
-  color: #333;
-}
-
-.category-filter-btn.active {
-  background-color: #111;
-  color: #fff;
-}
-
 .category-group {
   margin-bottom: 36px;
 }
