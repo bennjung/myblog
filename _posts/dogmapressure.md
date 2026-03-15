@@ -3,6 +3,7 @@ layout: post
 title: "Dogma Pressure"
 date: 2026-03-09 01:58
 author: Benny
+category: Life
 ---
 <기술공화국 선언, Alex Karp> 내용 중 이런 말이 있다. 
 "모든것을 표용하겠다는 고결하고 이상적인 열망은 결과적으로 아무것도 지지하지 않는것으로 전락했다" 

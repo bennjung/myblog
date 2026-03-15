@@ -1,0 +1,26 @@
+---
+layout: default
+title: Categories
+---
+
+<section class="categories-page">
+  <h2 class="section-heading">Categories</h2>
+
+  {% assign categories = site.posts | map: "category" | compact | uniq | sort %}
+
+  {% for category in categories %}
+  <div class="category-group" id="{{ category }}">
+    <h3 class="category-name">{{ category }}</h3>
+    <ul class="post-list">
+      {% for post in site.posts %}
+        {% if post.category == category %}
+        <li class="post-list-item">
+          <span class="post-list-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+          <a class="post-list-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</section>

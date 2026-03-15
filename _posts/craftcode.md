@@ -3,6 +3,7 @@ layout: post
 title: "Craft Code"
 date: 2026-03-15 17:08
 author: Benny
+category: Tech
 ---
 IT 업계가 AI를 적극적으로 도입하다보니, 소프트웨어 개발 주기 - 워크프로세스에 큰 변화가 일어났다. 다만 도입률과 생산성은 비례하지않는다. <br>
 

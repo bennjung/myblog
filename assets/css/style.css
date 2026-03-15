@@ -262,6 +262,40 @@ img {
   font-style: italic;
 }
 
+/* --- Category Badge --- */
+.post-category-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #555;
+  background-color: #f0f0f0;
+  padding: 2px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  margin-left: 8px;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+}
+
+.post-category-badge:hover {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+/* --- Categories Page --- */
+.category-group {
+  margin-bottom: 36px;
+}
+
+.category-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
 /* --- Single Post --- */
 .post-header {
   margin-bottom: 40px;

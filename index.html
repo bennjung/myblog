@@ -16,6 +16,9 @@ title: Home
     <li class="post-list-item">
       <span class="post-list-date">{{ post.date | date: "%Y.%m.%d" }}</span>
       <a class="post-list-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {% if post.category %}
+      <a class="post-category-badge" href="{{ '/categories/' | relative_url }}#{{ post.category }}">{{ post.category }}</a>
+      {% endif %}
       {% if post.excerpt %}
       <p class="post-list-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
       {% endif %}
