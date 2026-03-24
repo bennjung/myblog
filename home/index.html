@@ -1,0 +1,67 @@
+---
+layout: default
+title: Home
+---
+
+<div class="home-page">
+
+  <!-- 소개 -->
+  <section class="home-section" id="about">
+    <h1 class="home-greeting">GGULGEM</h1>
+    <p>경험을 직접 기록 및 축적 하는 공간입니다.</p>
+  </section>
+
+  <hr>
+
+  <!-- CV / Resume -->
+  <section class="home-section" id="resume">
+    <h2><a href="#" class="home-link" target="_blank">CV / Resume &rarr;</a></h2>
+
+  </section>
+
+  <hr>
+
+  <!-- 읽은 책 -->
+  <section class="home-section" id="books">
+    <h2>Books I've Read</h2>
+
+    <div class="book-list">
+      <div class="book-item">
+        <span class="book-year">2026</span>
+        <ul>
+          <li><strong>애플 인 차이나</strong></li>
+          <li><strong>산시로 </strong></li>
+          <li><strong>나는 고양이로소이다 (Drop)</strong></li>
+          <li><strong>지하로부터의 수기</strong></li>
+          <li><strong>기술공화국 선언</strong></li>
+          <li><strong>제로 투 원</strong></li>
+          <li><strong>인간실격</strong></li>
+          <li><strong>신 & 골렘 주식회사</strong></li>
+          <li><strong>아서왕의 죽음 1 (Drop)</strong></li>
+          <li><strong>오컬트의 역사(Drop)</strong></li>
+          <li><strong>창조적 행위: 존재의 방식</strong></li>
+        </ul>
+      </div>
+
+      <div class="book-item">
+        <span class="book-year">2025</span>
+        <ul>
+          <li><strong>땅과 바다 </strong></li>
+          <li><strong>도덕의 계보</strong></li>
+          <li><strong>금융 투기 역사</strong></li>
+          <li><strong>유닉스의 탄생</strong></li>
+          <li><strong>하드씽</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  document.querySelectorAll('.book-item').forEach(function(item) {
+    var year = item.querySelector('.book-year');
+    var count = item.querySelectorAll('li').length;
+    year.textContent = year.textContent + ' (' + count + ')';
+  });
+</script>
