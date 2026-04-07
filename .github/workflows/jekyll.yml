@@ -24,7 +24,8 @@ jobs:
           fetch-depth: 0
       - name: Auto-date posts without date prefix
         run: |
-          for file in _posts/*.md; do
+          shopt -s globstar
+          for file in _posts/**/*.md; do
             [ -f "$file" ] || continue
             filename=$(basename "$file")
             if [[ ! "$filename" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}- ]]; then
@@ -32,8 +33,9 @@ jobs:
               if [ -z "$commit_date" ]; then
                 commit_date=$(date +"%Y-%m-%d")
               fi
-              mv "$file" "_posts/${commit_date}-${filename}"
-              echo "Renamed: $filename -> ${commit_date}-${filename}"
+              dir=$(dirname "$file")
+              mv "$file" "${dir}/${commit_date}-${filename}"
+              echo "Renamed: $file -> ${dir}/${commit_date}-${filename}"
             fi
           done
       - name: Setup Ruby
